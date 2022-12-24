@@ -6,7 +6,7 @@ let icon = $("i");
 let input = $("input");
 
 let todosCount = lis.length;
-let paragraph = $("p");
+let paragraph = $("p.todos-count");
 paragraph.text(totalTodos + " " + todosCount);
 
 // Check Task is Done by clicking
@@ -62,3 +62,22 @@ input.on("keypress", function (e) {
     inputValue = $(this).val(" ");
   }
 });
+
+// Showing popup for the User for some hints of Website [Pure JS]
+popup();
+
+function popup() {
+  document.getElementById("disclaimer").style.display = "block";
+
+  // console.log("wait 3 seconds then hide");
+
+  setTimeout(hidePopup, 6000);
+}
+
+function hidePopup() {
+  document.getElementById("disclaimer").style.display = "none";
+
+  // console.log("wait 3 minutes then show popup again");
+
+  setTimeout(popup, 2 * 60 * 1000);
+}
