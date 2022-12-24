@@ -1,0 +1,140 @@
+/* Font Family [Google Fonts] */
+/* -------------------------- */
+/* font-family: "Mina", sans-serif;
+font-family: "Patrick Hand SC", cursive;
+font-family: "Shrikhand", cursive; */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Main Rules  */
+body {
+  /* Gradient Background  */
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #fff;
+  font-family: "Mina", sans-serif;
+  /* Layout  */
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.3vw;
+}
+
+/* Todo  */
+
+#container {
+  /* background-color: gainsboro; */
+  background-color: #e9efff;
+  color: black;
+  width: 350px;
+  margin-top: 1.5rem;
+  /* padding: 1.2rem; */
+  border: 2px solid #4b6972de;
+  border: 2px solid #ffffffe8;
+  border-radius: 8px;
+  /* flex: 1; */
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+#container input {
+  color: #146aa1;
+  width: 100%;
+  /* padding: 0;
+  margin: 0; */
+  overflow: auto;
+  height: 2.2rem;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  font-weight: bolder;
+  font-size: 0.85rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  letter-spacing: 1px;
+  transition: all 0.4s ease-in-out;
+}
+
+#container input::placeholder {
+  color: rgba(0, 0, 0, 0.09);
+}
+
+#container input:focus {
+  background-color: #f7f9ff;
+  text-transform: capitalize;
+}
+
+.todo-title {
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-family: "Shrikhand", cursive;
+}
+
+.todo-header {
+  /* display: flex;
+  margin: 20px 40px; */
+  display: inline-flex;
+  justify-content: space-around;
+  /* margin: 20px 20px; */
+}
+
+/* Animated Icon  */
+i.fa-solid.fa-circle-plus.fa-flip {
+  font-size: 2rem;
+  align-self: center;
+  margin-left: 11px;
+}
+
+ul {
+  text-align: left;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 1.3rem;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.todos-count {
+  color: gainsboro;
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.task-done {
+  text-decoration: line-through;
+  /* color: darkgrey; */
+  color: #857555;
+}
+
+/* Footer  */
+footer {
+  position: absolute;
+  bottom: 0;
+  color: gainsboro;
+  opacity: 0.75;
+  font-size: 0.75rem;
+}
