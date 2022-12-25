@@ -2,7 +2,7 @@ let totalTodos = "Your Total Daily Todos: ";
 let lis = $("li");
 let ul = $("ul");
 let spans = $("span");
-let icon = $("i");
+let icon = $(".fa-circle-plus");
 let input = $("input");
 
 let todosCount = lis.length;
@@ -38,7 +38,7 @@ ul.on("click", "span", function (event) {
 
 // paragraph.text(todosCount);
 
-// Icon On Click to hide the input
+// Hide Input [Click on Icon]
 icon.on("click", function (e) {
   //   input.toggle("slide", "swing");
   //   input.toggle("fold", 1000);
@@ -54,7 +54,9 @@ input.on("keypress", function (e) {
     // Grabbing Text from the Input Field
     let inputValue = $(this).val();
     // alert(inputValue);
-    ul.append(`<li><span>X</span> ${inputValue}</li>`);
+    ul.append(
+      `<li><span><i class="fa-solid fa-trash"></i></span> ${inputValue}</li>`
+    );
     todosCount += 1;
     paragraph.text(totalTodos + "  " + todosCount);
     // $(this).val("");
@@ -67,7 +69,8 @@ input.on("keypress", function (e) {
 popup();
 
 function popup() {
-  document.getElementById("disclaimer").style.display = "block";
+  // document.getElementById("disclaimer").style.display = "block";
+  document.getElementById("disclaimer").classList.remove("fade");
 
   // console.log("wait 3 seconds then hide");
 
@@ -75,9 +78,35 @@ function popup() {
 }
 
 function hidePopup() {
-  document.getElementById("disclaimer").style.display = "none";
+  // document.getElementById("disclaimer").style.display = "none";
+  document.getElementById("disclaimer").classList.add("fade");
 
   // console.log("wait 3 minutes then show popup again");
 
   setTimeout(popup, 2 * 60 * 1000);
+  // setTimeout(popup, 8000);
 }
+
+// Bonus
+// Header Animation
+jQuery(document).ready(function () {
+  $("h1").mousemove(function (e) {
+    var rXP = e.pageX - this.offsetLeft - $(this).width() / 2;
+    var rYP = e.pageY - this.offsetTop - $(this).height() / 2;
+    $("h1").css(
+      "text-shadow",
+      +rYP / 10 +
+        "px " +
+        rXP / 80 +
+        "px rgb(115, 147, 179), " +
+        rYP / 8 +
+        "px " +
+        rXP / 60 +
+        "px rgba(130,208,0,1), " +
+        rXP / 70 +
+        "px " +
+        rYP / 12 +
+        "px rgba(0,159,227,.7)"
+    );
+  });
+});

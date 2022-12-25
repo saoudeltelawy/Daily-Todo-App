@@ -37,17 +37,37 @@ h1 {
   font-size: 3.3vw;
 }
 
+h1 .fa-list {
+  opacity: 0.7;
+  font-size: 2.1rem;
+  vertical-align: middle;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 1.3rem;
+}
+
+li {
+  line-height: 40px;
+  height: 40px;
+}
+
 /* Todo  */
 
 #container {
   /* background-color: gainsboro; */
   background-color: #e9efff;
+  /* background-color: #f7f7f7; */
   color: black;
   width: 350px;
   margin-top: 1.5rem;
   /* padding: 1.2rem; */
-  border: 2px solid #4b6972de;
-  border: 2px solid #ffffffe8;
+  /* border: 2px solid #ffffffe8; */
   border-radius: 8px;
   /* flex: 1; */
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
@@ -62,7 +82,7 @@ h1 {
   margin: 0; */
   overflow: auto;
   height: 2.2rem;
-  outline: none;
+  /* outline: none; */
   border: none;
   padding: 0.5rem;
   font-weight: bolder;
@@ -71,7 +91,7 @@ h1 {
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   letter-spacing: 1px;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #container input::placeholder {
@@ -81,12 +101,14 @@ h1 {
 #container input:focus {
   background-color: #f7f9ff;
   text-transform: capitalize;
+  outline: none;
 }
 
 .todo-title {
   letter-spacing: 1px;
   font-weight: 600;
   font-family: "Shrikhand", cursive;
+  text-shadow: 0.1em 0.1em 0 hsl(199, 57%, 89%);
 }
 
 .todo-header {
@@ -104,24 +126,12 @@ i.fa-solid.fa-circle-plus.fa-flip {
   margin-left: 11px;
 }
 
-ul {
-  text-align: left;
-  font-family: "Patrick Hand SC", cursive;
-  font-size: 1.3rem;
-}
-
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-}
-
 .todos-count {
   color: gainsboro;
   font-weight: 400;
   font-size: 0.85rem;
   margin-top: 1.2rem;
+  text-shadow: 0.1em 0.1em 0 hsl(200 50% 30%);
 }
 
 .task-done {
@@ -130,26 +140,61 @@ li {
   color: #857555;
 }
 
+span {
+  background-color: #e74c3c;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  margin-right: 0.75rem;
+  text-align: center;
+  /* color: white; */
+  color: #e9efff;
+  /* width: 40px; */
+  display: inline-block;
+
+  /* For Animation  */
+  width: 0;
+  transition: all 0.3s linear;
+  opacity: 0;
+}
+
+li:hover span {
+  width: 40px;
+  opacity: 1;
+}
+
 /* PopUp Dialog Window */
 #disclaimer {
   /* background-color: rgb(17 74 133); */
   background-color: #f8f8ff;
   color: #333;
-  width: 250px;
+  width: 235px;
   padding: 0.45rem;
-  height: 200px;
+  height: 180px;
   position: absolute;
   top: 2rem;
   right: 2rem;
   border-radius: 4px;
   /* border: 1px groove #eeeeee3e; */
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  /* For Fading-Out Animation  */
+  opacity: 1;
+  transition: opacity 1s;
 }
 
+#disclaimer.fade {
+  opacity: 0;
+}
+
+#disclaimer h3 {
+  letter-spacing: 1px;
+}
 #disclaimer p {
   text-align: left;
   font-size: 0.9rem;
   font-family: "Patrick Hand SC", cursive;
+  letter-spacing: -1px;
   /* font-family: "Shrikhand", cursive; */
 }
 
